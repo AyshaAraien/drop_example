@@ -64,7 +64,7 @@ class _DropDownAppState extends State<DropDownApp> {
                         labelText: 'Name',
                       ),
                     ),
-                    new DropdownButtonFormField(
+                    new DropdownButton(
                       isExpanded: true,
                       icon: const Icon(Icons.add_location),
                       items: statesList.map((item) {
@@ -85,16 +85,11 @@ class _DropDownAppState extends State<DropDownApp> {
 
                         // print(testingList.toString());
                       },
-                      validator: (newVal) {
-                        if (newVal?.isEmpty ?? true) {
-                          return 'State is required';
-                        }
-                        return null;
-                      },
+                      
                       value: _state,
                       hint: Text('Select a state'),
                     ),
-                    new DropdownButtonFormField(
+                    new DropdownButton(
                       isExpanded: true,
                       icon: const Icon(Icons.gps_fixed),
                       items: tempList.map((item) {
@@ -108,12 +103,7 @@ class _DropDownAppState extends State<DropDownApp> {
                           _province = newVal;
                         });
                       },
-                      validator: (newVal) {
-                        if (newVal?.isEmpty ?? true) {
-                          return 'Province is required';
-                        }
-                        return null;
-                      },
+                      
                       value: _province,
                       hint: Text('Select a province'),
                     ),
